@@ -1,0 +1,10 @@
+.ProductCard {
+  width: 30%;
+  font-size: 8px;
+
+}
+
+.ProductCard>img {
+  width: 100%;
+
+}
