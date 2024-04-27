@@ -19,7 +19,7 @@ function ContainerProduct() {
 
   useEffect(() => {
     GetElementById()
-  }, [products])
+  }, [])
   return (
 
     <div className='ContainerProduct' >
