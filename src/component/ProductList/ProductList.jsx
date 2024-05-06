@@ -1,18 +1,18 @@
-import ProductCard from '../ProductCard/ProductCard'
-import './ProductList.css'
+import ProductCard from "../ProductCard/ProductCard";
+import "./ProductList.css";
 
 function ProductList({ products }) {
-  console.log(products)
+  console.log(products);
   return (
-    <div className=' ProductList'  >
-      {products.map((product) => (
-        <ProductCard product={product} key={product.id} />
-      ))}
-
-
+    <div className="ContainerProduct">
+      {products && products.length === 0 ? (
+        <div className="loader"></div>
+      ) : (
+        products.map((product) => (
+          <ProductCard product={product} key={product.id} />
+        ))
+      )}
     </div>
-
-  )
-
+  );
 }
 export default ProductList;

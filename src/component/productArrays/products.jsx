@@ -1,31 +1,21 @@
-
-
 function products() {
-
-  const Product = (
-
-    {
+  const Product =
+    ({
       title: remera,
       price: 22,
       color: green,
-      image: ''
+      image: "",
     },
-
     {
       title: remera,
       price: 22,
       color: green,
-      image: ''
-
+      image: "",
     },
-
     {
       title: remera,
       price: 22,
       color: green,
-      image: ''
-    }
-
-  )
-
-} 
+      image: "",
+    });
+}

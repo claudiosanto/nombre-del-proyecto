@@ -1,46 +1,20 @@
-import { useEffect, useState } from 'react'
-import './ContainerProducts.css'
-import ProductList from '../ProductList/ProductList'
+import { useEffect } from "react";
+import "./ContainerProducts.css";
+import ProductList from "../ProductList/ProductList";
+import { useProductContext } from "../../context/Context";
+
 function ContainerProduct() {
+  const { products, GetProducts } = useProductContext();
 
-  const [products, setProducts] = useState([])
-
-  const GetElementById = async () => {
-    try {
-      const response = await fetch("https://fakestoreapi.com/products/")
-      const data = await response.json()
-      setProducts(data)
-    } catch (error) {
-      console.error(error)
-    }
-
-
-  }
+  // se extrae los valores de ProductsContext atraves del hop useContext
 
   useEffect(() => {
-    GetElementById()
-  }, [])
+    GetProducts();
+  }, []);
   return (
-
-    <div className='ContainerProduct' >
-      {products.length === 0 ? (<div className="lds-facebook"><div></div> <div></div><div></div><div></div></div>) : (
-        <ProductList products={products} />
-      )}
-    </div >
-
-
-
-  )
-
-
-
-};
+    <div className="ContainerProduct">
+      <ProductList products={products} />
+    </div>
+  );
+}
 export default ContainerProduct;
-
-
-
-
-
-
-
-
