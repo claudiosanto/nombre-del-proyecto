@@ -1,7 +1,7 @@
 import { createContext, useContext, useState } from "react";
 
 import { db } from "../firebase/config";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, doc, getDoc, getDocs } from "firebase/firestore";
 
 // creo un context
 export const ProductsContext = createContext();
@@ -18,8 +18,6 @@ function ProductsProvider({ children }) {
 
   const GetProducts = async () => {
     try {
-      //traer datos de firestore
-
       const reference = collection(db, "product");
       const productarrays = [];
       const querySnapshot = await getDocs(reference);
@@ -29,20 +27,27 @@ function ProductsProvider({ children }) {
           ...doc.data(),
         });
       });
-
       setProducts(productarrays);
     } catch (error) {
       console.error(error);
     }
   };
+  //traer
 
-  const GetElementById = async (Id) => {
+  const GetElementById = async (id) => {
     try {
-      const response = await fetch(`https://fakestoreapi.com/products/${Id}`);
-      const data = await response.json();
-      console.log(data);
-      return data;
-    } catch (error) {}
+      const docReference = doc(db, "product", id);
+      const docSnap = await getDoc(docReference);
+
+      if (docSnap.exists()) {
+        console.log("Document data:", docSnap.data());
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
