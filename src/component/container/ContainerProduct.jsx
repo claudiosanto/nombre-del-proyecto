@@ -4,7 +4,7 @@ import ProductList from "../ProductList/ProductList";
 import { useProductContext } from "../../context/Context";
 
 function ContainerProduct() {
-  const { products, GetProducts } = useProductContext();
+  const { products, GetProducts, lavarropas } = useProductContext();
 
   // se extrae los valores de ProductsContext atraves del hop useContext
 
@@ -14,6 +14,7 @@ function ContainerProduct() {
   return (
     <div className="ContainerProduct">
       <ProductList products={products} />
+      <ProductList products={lavarropas} />
     </div>
   );
 }

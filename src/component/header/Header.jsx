@@ -4,7 +4,7 @@ import "./Header.css";
 function Header() {
   return (
     <div className="header">
-      <h1> supermercado</h1>
+      <h1> ElevationCommerce</h1>
       <nav>
         <Link className="inicio" to="/">
           INICIO

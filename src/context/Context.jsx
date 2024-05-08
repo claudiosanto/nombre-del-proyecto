@@ -15,12 +15,16 @@ function ProductsProvider({ children }) {
   //proveedor de productos " ProductsProvider"
   //creas un estado global
   const [products, setProducts] = useState([]);
-
+  const [lavarropas, setLavarropas] = useState([]);
   const GetProducts = async () => {
     try {
-      const reference = collection(db, "product", "lavarropas");
+      const reference = collection(db, "product");
+      const Reference2 = collection(db, "lavarropas");
       const productarrays = [];
+      const productarrays2 = [];
       const querySnapshot = await getDocs(reference);
+      const querySnapshot2 = await getDocs(Reference2);
+
       querySnapshot.forEach((doc) => {
         productarrays.push({
           id: doc.id,
@@ -28,6 +32,14 @@ function ProductsProvider({ children }) {
         });
       });
       setProducts(productarrays);
+
+      querySnapshot2.forEach((doc) => {
+        productarrays2.push({
+          id: doc.id,
+          ...doc.data(),
+        });
+      });
+      setLavarropas(productarrays2);
     } catch (error) {
       console.error(error);
     }
@@ -36,14 +48,22 @@ function ProductsProvider({ children }) {
 
   const GetElementById = async (id) => {
     try {
-      const docReference = doc(db, "product", "lavarropas", id);
+      const docReference = doc(db, "product", id);
+      const docReference2 = doc(db, "lavarropas", id);
       const docSnap = await getDoc(docReference);
+      const docSnap2 = await getDoc(docReference2);
 
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
         return docSnap.data();
       } else {
-        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+
+      if (docSnap2.exists()) {
+        console.log("Document data:", docSnap2.data());
+        return docSnap2.data();
+      } else {
         console.log("No such document!");
       }
     } catch (error) {
@@ -52,7 +72,15 @@ function ProductsProvider({ children }) {
   };
 
   return (
-    <ProductsContext.Provider value={{ products, GetProducts, GetElementById }}>
+    <ProductsContext.Provider
+      value={{
+        products,
+        GetProducts,
+        lavarropas,
+        setLavarropas,
+        GetElementById,
+      }}
+    >
       {children}
     </ProductsContext.Provider>
   );

@@ -1,18 +1,24 @@
-.navigations{
-color:darkblue;
 
-}
 .inicio{
-  color: aqua;
+  color:  white;
 }
 .header{
-margin-bottom:100px;
-height: 260px;
- width: 340%;
+height: 300px;
+ width: 1340px;
 font-size: 100%;
-
 background-color:forestgreen;
-display: flex;
-justify-content: space-between;
-color: black;
+
 }
+h1{
+  display: flex;
+    justify-content: center;
+    color: black;
+}
+nav{
+  margin-top: -80px;
+  margin-right: 25px;
+justify-content: space-between;
+text-align: right ;
+font-size: 25px;
+}
+

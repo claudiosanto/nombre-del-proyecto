@@ -6,7 +6,6 @@ function ProductCard({ product }) {
     <div className=" ProductCard">
       <h1>{product.title}</h1>
       <img src={product.imag} />
-
       <Link to={`/product/${product.id}`}>VER DETALLES</Link>
     </div>
   );

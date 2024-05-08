@@ -1,5 +1,8 @@
+.ContainerProduct{
+height: 300px;
+width: 400px;
 
-
+}
 .loader {
   height: 40px;
   aspect-ratio: .866;
