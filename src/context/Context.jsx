@@ -18,7 +18,7 @@ function ProductsProvider({ children }) {
 
   const GetProducts = async () => {
     try {
-      const reference = collection(db, "product");
+      const reference = collection(db, "product", "lavarropas");
       const productarrays = [];
       const querySnapshot = await getDocs(reference);
       querySnapshot.forEach((doc) => {
@@ -36,11 +36,12 @@ function ProductsProvider({ children }) {
 
   const GetElementById = async (id) => {
     try {
-      const docReference = doc(db, "product", id);
+      const docReference = doc(db, "product", "lavarropas", id);
       const docSnap = await getDoc(docReference);
 
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
+        return docSnap.data();
       } else {
         // docSnap.data() will be undefined in this case
         console.log("No such document!");

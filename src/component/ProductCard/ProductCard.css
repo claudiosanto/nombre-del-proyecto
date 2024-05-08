@@ -1,10 +1,11 @@
 .ProductCard {
-  width: 30%;
-  font-size: 8px;
+text-align: block;
+  font-size: 10px;
 
 }
 
 .ProductCard>img {
-  width: 60%;
-
+  width: 74%;
+display: block;
+margin-bottom: 10px;
 }

@@ -1,11 +1,18 @@
 .navigations{
-margin: 5%;
-width: 30%;
-background-color: aqua;
+color:darkblue;
 
 }
+.inicio{
+  color: aqua;
+}
 .header{
-font-size: 120%;
-text-align: left;
+margin-bottom:100px;
+height: 260px;
+ width: 340%;
+font-size: 100%;
 
+background-color:forestgreen;
+display: flex;
+justify-content: space-between;
+color: black;
 }
