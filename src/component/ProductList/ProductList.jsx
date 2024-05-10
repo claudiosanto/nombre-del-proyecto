@@ -4,7 +4,7 @@ import "./ProductList.css";
 function ProductList({ products }) {
   console.log(products);
   return (
-    <div className="ContainerProduct">
+    <div className="productlist">
       {products && products.length === 0 ? (
         <div className="loader"></div>
       ) : (

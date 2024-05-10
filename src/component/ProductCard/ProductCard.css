@@ -1,11 +1,15 @@
 .ProductCard {
-display: block;
-  flex-direction: column;
-  font-size: 10px;
 
+  font-size: 14px;
+ text-align:start ;
+ color:firebrick;
+ margin-bottom: 100px;
+ margin: 100px;
+ margin-left: 15px;
 }
 
-.ProductCard>img {
-  width: 74%;
-margin:130px;
+img{
+width: 250px;
+height: 300px;
+margin-right: 10px;
 }

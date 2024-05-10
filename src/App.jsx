@@ -10,10 +10,9 @@ function app() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route
-            path="/product/lavarropas/:productId"
-            element={<ContainerDetails />}
-          />
+          <Route path="/product/:productId" element={<ContainerDetails />} />
+          <Route path="/tecnology/:tecnology" element={<ContainerProduct />} />
+
           <Route path="/" element={<ContainerProduct />} />
         </Routes>
       </BrowserRouter>

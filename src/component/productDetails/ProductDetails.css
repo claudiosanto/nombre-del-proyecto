@@ -1,11 +1,10 @@
-
 .Details{
-  color: whitesmoke;
-  width: 200px;
-
+color: darkcyan;
+font-size: 30px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-.prop >img{
+.img{
 
-  width: 400px;
-    height: 400px;
+width: 400px;
+height: 500px;
 }

@@ -1,8 +1,12 @@
-.ContainerProduct{
-height: 300px;
-width: 400px;
-
+.productlist{
+display: flex;
+flex-wrap: wrap;
+margin-top: 10px;
+margin-bottom: 60px;
+align-items:flex-start;
 }
+
+
 .loader {
   height: 40px;
   aspect-ratio: .866;

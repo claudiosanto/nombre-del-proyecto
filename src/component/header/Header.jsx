@@ -3,14 +3,25 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div className="header">
+    <header>
       <h1> ElevationCommerce</h1>
-      <nav>
-        <Link className="inicio" to="/">
-          INICIO
-        </Link>
-      </nav>
-    </div>
+      <div>
+        <nav className="nav">
+          <Link className="items" to="/">
+            inicio
+          </Link>
+          <br></br>
+          <Link className="items" to="/category/tecnologia">
+            tecnologia
+          </Link>
+          <br></br>
+          <Link className="items" to="/category/ropa">
+            Ropa
+          </Link>
+          <br></br>
+        </nav>
+      </div>
+    </header>
   );
 }
 export default Header;

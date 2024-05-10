@@ -1,7 +1,14 @@
 import { createContext, useContext, useState } from "react";
 
 import { db } from "../firebase/config";
-import { collection, doc, getDoc, getDocs } from "firebase/firestore";
+import {
+  collection,
+  doc,
+  getDoc,
+  getDocs,
+  query,
+  where,
+} from "firebase/firestore";
 
 // creo un context
 export const ProductsContext = createContext();
@@ -15,15 +22,18 @@ function ProductsProvider({ children }) {
   //proveedor de productos " ProductsProvider"
   //creas un estado global
   const [products, setProducts] = useState([]);
-  const [lavarropas, setLavarropas] = useState([]);
-  const GetProducts = async () => {
+
+  const GetProducts = async (category = null) => {
     try {
       const reference = collection(db, "product");
-      const Reference2 = collection(db, "lavarropas");
+      //filtar por categoria
+      const q = query(
+        collection(db, "product"),
+        where("category", "==", category)
+      );
       const productarrays = [];
-      const productarrays2 = [];
-      const querySnapshot = await getDocs(reference);
-      const querySnapshot2 = await getDocs(Reference2);
+      //ejecuta la const de q "filtro"
+      const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
         productarrays.push({
@@ -32,14 +42,6 @@ function ProductsProvider({ children }) {
         });
       });
       setProducts(productarrays);
-
-      querySnapshot2.forEach((doc) => {
-        productarrays2.push({
-          id: doc.id,
-          ...doc.data(),
-        });
-      });
-      setLavarropas(productarrays2);
     } catch (error) {
       console.error(error);
     }
@@ -49,20 +51,12 @@ function ProductsProvider({ children }) {
   const GetElementById = async (id) => {
     try {
       const docReference = doc(db, "product", id);
-      const docReference2 = doc(db, "lavarropas", id);
+
       const docSnap = await getDoc(docReference);
-      const docSnap2 = await getDoc(docReference2);
 
       if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
         return docSnap.data();
-      } else {
-        console.log("No such document!");
-      }
-
-      if (docSnap2.exists()) {
-        console.log("Document data:", docSnap2.data());
-        return docSnap2.data();
       } else {
         console.log("No such document!");
       }
@@ -76,8 +70,7 @@ function ProductsProvider({ children }) {
       value={{
         products,
         GetProducts,
-        lavarropas,
-        setLavarropas,
+
         GetElementById,
       }}
     >

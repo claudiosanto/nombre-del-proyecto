@@ -1,24 +1,22 @@
 
-.inicio{
-  color:  white;
-}
-.header{
-height: 300px;
- width: 1340px;
-font-size: 100%;
-background-color:forestgreen;
-
+.nav{
+  margin: auto;
+height: 260px;
+  width: 1346px;
+display: flex;
+background-color:floralwhite;
+justify-content: flex-end;
+gap: 12px;
 }
 h1{
-  display: flex;
-    justify-content: center;
+   text-align: center;
     color: black;
+    margin-bottom: -79px;
 }
-nav{
-  margin-top: -80px;
-  margin-right: 25px;
-justify-content: space-between;
-text-align: right ;
-font-size: 25px;
+.items{
+  margin-top: 10px;
+color: black;
+font-size: 20px;
 }
+
 
