@@ -27,13 +27,16 @@ function ProductsProvider({ children }) {
     try {
       const reference = collection(db, "product");
       //filtar por categoria
-      const q = query(
+      const referencategory = query(
         collection(db, "product"),
         where("category", "==", category)
       );
+      const querySnapshot = await getDocs(
+        category ? referencategory : reference
+      );
+
       const productarrays = [];
       //ejecuta la const de q "filtro"
-      const querySnapshot = await getDocs(q);
 
       querySnapshot.forEach((doc) => {
         productarrays.push({
@@ -42,9 +45,7 @@ function ProductsProvider({ children }) {
         });
       });
       setProducts(productarrays);
-    } catch (error) {
-      console.error(error);
-    }
+    } catch (error) {}
   };
   //traer
 

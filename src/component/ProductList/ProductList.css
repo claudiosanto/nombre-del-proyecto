@@ -1,9 +1,11 @@
 .productlist{
 display: flex;
-flex-wrap: wrap;
-margin-top: 10px;
-margin-bottom: 60px;
-align-items:flex-start;
+justify-content: center;
+flex-wrap: wrap ;
+width: calc(70% -80px );
+gap: 40px;
+
+
 }
 
 

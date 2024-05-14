@@ -1,23 +1,21 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
+import logo2 from "../../assets/icons/logo2.png";
 
 function Header() {
   return (
-    <header>
-      <h1> ElevationCommerce</h1>
+    <header className=" containerheader">
+      <div className="hadertitle">
+        <img src={logo2} alt="logo" />
+        <h1> ElevationCommerce</h1>
+      </div>
       <div>
-        <nav className="nav">
-          <Link className="items" to="/">
-            inicio
-          </Link>
+        <nav className="containeritems">
+          <Link to="/">inicio</Link>
           <br></br>
-          <Link className="items" to="/category/tecnologia">
-            tecnologia
-          </Link>
+          <Link to="/category/tecnologia">tecnologia</Link>
           <br></br>
-          <Link className="items" to="/category/ropa">
-            Ropa
-          </Link>
+          <Link to="/category/ropa">Ropa</Link>
           <br></br>
         </nav>
       </div>

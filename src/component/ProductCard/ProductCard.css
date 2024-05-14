@@ -1,15 +1,21 @@
 .ProductCard {
+  font-size: 15px;
+text-align: center;
+ color:black;
+width:calc(15%-35px);
+margin-bottom: 40px;
+height: auto;
+}
+.title{
+font-size: 30px;
+color:black;
+margin-bottom: 20px;
 
-  font-size: 14px;
- text-align:start ;
- color:firebrick;
- margin-bottom: 100px;
- margin: 100px;
- margin-left: 15px;
 }
 
-img{
-width: 250px;
-height: 300px;
-margin-right: 10px;
+.ProductCard > img{
+background-color: antiquewhite;
+width: calc(100%-20%);
+padding: 10px;
+
 }

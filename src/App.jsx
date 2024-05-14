@@ -11,7 +11,7 @@ function app() {
         <Header />
         <Routes>
           <Route path="/product/:productId" element={<ContainerDetails />} />
-          <Route path="/tecnology/:tecnology" element={<ContainerProduct />} />
+          <Route path="/category/:category" element={<ContainerProduct />} />
 
           <Route path="/" element={<ContainerProduct />} />
         </Routes>
