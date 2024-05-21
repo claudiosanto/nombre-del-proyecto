@@ -9,9 +9,7 @@ function ProductDetails({ product }) {
         <img className="img" src={product.imag} />
       </ul>
       <button>
-        <Link className="boton" to="/">
-          inicio
-        </Link>
+        <Link to={`/category/${product.category}`}>atras</Link>
       </button>
     </div>
   );
