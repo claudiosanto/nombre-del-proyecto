@@ -16,7 +16,7 @@ function Header() {
           <Link to="/category/tecnologia">tecnologia</Link>
           <br></br>
           <Link to="/category/ropa">Ropa</Link>
-          <br></br>
+          <input type="text">buscar</input>
         </nav>
       </div>
     </header>
