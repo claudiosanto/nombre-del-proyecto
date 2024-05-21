@@ -11,12 +11,14 @@ function Header() {
       </div>
       <div>
         <nav className="containeritems">
+          <label>
+            buscar: <input className="input" type="search" />
+          </label>
           <Link to="/">inicio</Link>
           <br></br>
           <Link to="/category/tecnologia">tecnologia</Link>
           <br></br>
           <Link to="/category/ropa">Ropa</Link>
-          <input type="text">buscar</input>
         </nav>
       </div>
     </header>
