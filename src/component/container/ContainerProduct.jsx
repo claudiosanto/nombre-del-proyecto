@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 function ContainerProduct() {
   const { products, GetProducts } = useProductContext();
   const { category } = useParams();
-  // se extrae los valores de ProductsContext atraves del hop useContext
+  //se extrae los valores de ProductsContext atraves del hop useContext
 
   useEffect(() => {
     GetProducts(category);

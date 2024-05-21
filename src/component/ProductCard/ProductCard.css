@@ -1,20 +1,20 @@
 .ProductCard {
   font-size: 15px;
 text-align: center;
- color:black;
+ 
 width:calc(15%-35px);
 margin-bottom: 40px;
 height: auto;
 }
 .title{
 font-size: 30px;
-color:black;
+color: darkcyan;
 margin-bottom: 20px;
 
 }
 
 .ProductCard > img{
-background-color: antiquewhite;
+
 width: calc(100%-20%);
 padding: 10px;
 

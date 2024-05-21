@@ -39,4 +39,10 @@ gap: 15px;
 .containeritems > a{
   color: black;
   text-decoration: none;
+} 
+.hadertitle  > img{
+height:40px;
+  width: 40px;
+  margin-top: 10px;
+  border-radius: 60px;
 }
