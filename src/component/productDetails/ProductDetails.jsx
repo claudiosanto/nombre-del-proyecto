@@ -11,9 +11,8 @@ function ProductDetails({ product }) {
       <button>
         <Link className="boton" to="/">
           inicio
-        </Link>{" "}
-      </button>{" "}
-      <br></br>
+        </Link>
+      </button>
     </div>
   );
 }
